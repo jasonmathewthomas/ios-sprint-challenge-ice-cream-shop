@@ -67,8 +67,9 @@ let sizes = [size].self
 
 let toppingNew = ["Nuts", "Choco Chips", "Raisins", "Berries", "Sea Salt"]
 
-let iceCreamFlavors = [toppingNew[0], toppingNew[1], toppingNew[2], toppingNew[3], toppingNew[4]]
+var iceCreamFlavors = [toppingNew[0], toppingNew[1], toppingNew[2], toppingNew[3], toppingNew[4]]
 
-let myIceCreamShop = iceCreamFlavors; toppingNew; sizes
+var myIceCreamShop = iceCreamFlavors; toppingNew; sizes
 
-
+iceCreamFlavors.append(contentsOf: myIceCreamShop)
+print(sizes)
