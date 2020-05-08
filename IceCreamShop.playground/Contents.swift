@@ -47,7 +47,7 @@ class IceCreamShop {
     func orderCone(flavor: Flavor, topping: String, size: size) -> Cone? {
         let cone = Cone(flavor: [flavor], topping: [topping], size: size)
         totalSales += cone.size.rawValue
-        print("Our chocolate ice cream is \(totalSales)")
+        print(totalSales)
         return cone
     }
     
@@ -61,7 +61,6 @@ class IceCreamShop {
     }
 }
 
-
 //let flavorNew = IceCreamShop([Flavor],: [flavor], [toppings]: ["kkk"], size: [size])
 
 let sizes = [size].self
@@ -70,5 +69,6 @@ let toppingNew = ["Nuts", "Choco Chips", "Raisins", "Berries", "Sea Salt"]
 
 let iceCreamFlavors = [toppingNew[0], toppingNew[1], toppingNew[2], toppingNew[3], toppingNew[4]]
 
-//let myIceCreamShop = IceCreamShop(flavor: Flavor, toppings: toppingNew, size: size)
+let myIceCreamShop = iceCreamFlavors; toppingNew; sizes
+
 
