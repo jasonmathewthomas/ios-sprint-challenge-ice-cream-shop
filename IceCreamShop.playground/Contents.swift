@@ -61,8 +61,6 @@ class IceCreamShop {
     }
 }
 
-//let flavorNew = IceCreamShop([Flavor],: [flavor], [toppings]: ["kkk"], size: [size])
-
 let sizes = [size].self
 
 let toppingNew = ["Nuts", "Choco Chips", "Raisins", "Berries", "Sea Salt"]
