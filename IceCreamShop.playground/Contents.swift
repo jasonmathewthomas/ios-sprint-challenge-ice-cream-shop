@@ -71,4 +71,4 @@ let iceCreamFlavors = [toppingNew[0], toppingNew[1], toppingNew[2], toppingNew[3
 
 //let myIceCreamShop = IceCreamShop(flavor: Flavor, toppings: toppingNew, size: size)
 
-iceCreamFlavors
+IceCreamShop
