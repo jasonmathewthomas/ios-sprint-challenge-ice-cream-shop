@@ -47,6 +47,7 @@ class IceCreamShop {
     func orderCone(flavor: Flavor, topping: String, size: size) -> Cone? {
         let cone = Cone(flavor: [flavor], topping: [topping], size: size)
         totalSales += cone.size.rawValue
+        print("Our chocolate ice cream is \(totalSales)")
         return cone
     }
     
