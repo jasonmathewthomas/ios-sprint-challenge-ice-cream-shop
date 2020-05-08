@@ -1,11 +1,11 @@
 import UIKit
 
 struct Flavor {
-    var name: String = "Vanilla"
+    var name: String
     var rating: Double
 }
 
-let newFlavor  = Flavor(name: "Chocolate", rating: 4.0)
+let newFlavor = Flavor(name: "chocolate", rating: 4.0)
 newFlavor.name
 
 enum size: Double {
@@ -14,89 +14,62 @@ enum size: Double {
     case large = 5.60
 }
 
-let small = size(rawValue: 3.99)
-
 struct Cone {
-    var flavor: Flavor
-    var topping: String
+    var flavor: [Flavor]
+    var topping: [String]
     var size: size
     
     func eat () {
-        print("Mmm!, I love \(flavor.name)")
+        print("Mmm!, I love \(newFlavor.name)")
     }
 }
 
 let chocFlavor = Flavor(name: "Chocolate", rating: 4.0)
 
+let chocolate = Cone(flavor: [chocFlavor], topping: ["sprinkles"], size: .small)
+chocolate.eat()
+
+
 class IceCreamShop {
-    var totalSales = 0.0
+    
     var flavors: [Flavor]
     var toppings: [String]
     var size: [size]
-   
-    init(flavors: [Flavor], toppings: [String], size: [size]) {
+    var totalSales = 0.0
+    
+    
+    init(flavor: [Flavor], toppings: [String], size: [size]) {
         self.flavors = flavor
         self.toppings = toppings
         self.size = size
     }
     
-    func orderCone(flavor: String, topping: String?, size: Double) -> Cone? {
-        
-        let cone = Cone(flavor: flavor, topping: topping, size: size)
-        totalSales += cone.size.
+    func orderCone(flavor: Flavor, topping: String, size: size) -> Cone? {
+        let cone = Cone(flavor: [flavor], topping: [topping], size: size)
+        totalSales += cone.size.rawValue
         return cone
+    }
+    
+    func listTopFlavors() {
+    
+    for Flavor in flavors {
+        if Flavor.rating >= 4.0 {
+            print("These are our top flavors")
+            }
+        }
     }
 }
 
 
-func listTopFlavors() {
-    
-    Flavor.init(name: "Chocolate Moose", rating: 4.5)
-    Flavor.init(name: "Pecan Delight", rating: 4.6)
-    Flavor.init(name: "Vanilla Swirl", rating: 4.4)
-    
-    print("Our top flavors are Chocolate Moose, Pecan Delight and Vanilla Swirl")
-}
+//let flavorNew = IceCreamShop([Flavor],: [flavor], [toppings]: ["kkk"], size: [size])
 
+let sizes = [size].self
 
-var totalSales = size.self
+let toppingNew = ["Nuts", "Choco Chips", "Raisins", "Berries", "Sea Salt"]
 
-//switch Cone {
-//case 1:
-//    print("Total Sales \(totalSales)")
-//default: print("There are no sales")
-//return Cone()
-//}
+let iceCreamFlavors = [toppingNew[0], toppingNew[1], toppingNew[2], toppingNew[3], toppingNew[4]]
 
+//let myIceCreamShop = IceCreamShop(flavor: Flavor, toppings: toppingNew, size: size)
 
-
-
-
-
-
-
-
-
-let flavorOne: String = "Blueberry"
-let flavorTwo: String = "Rasberry"
-let flavorThree: String = "Strawberry"
-let flavorFour: String = "Mango"
-let flavorFive: String = "Peach"
-
-let sizes = [size.small, size.medium, size.large]
-
-let toppings = ["Nuts", "Choco Chips", "Raisins", "Berries", "Sea Salt"]
-
-let iceCreamShop = [flavorOne, flavorTwo, flavorThree, flavorFour, flavorFive]
-
-listTopFlavors()
-
-let coneOne = orderCone
-
-coneOne("Cookie", "Chips", 3.99)
-
-eat()
-
-print(totalSales)
 
 
