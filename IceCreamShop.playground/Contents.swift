@@ -73,4 +73,4 @@ var myIceCreamShop = iceCreamFlavors; toppingNew; sizes
 
 iceCreamFlavors.append(contentsOf: myIceCreamShop)
 
-//print(totalSales)
+
