@@ -71,6 +71,5 @@ var iceCreamFlavors = [toppingNew[0], toppingNew[1], toppingNew[2], toppingNew[3
 
 var myIceCreamShop = iceCreamFlavors; toppingNew; sizes
 
-iceCreamFlavors.append(contentsOf: myIceCreamShop)
 
 
