@@ -68,6 +68,3 @@ let toppingNew = ["Nuts", "Choco Chips", "Raisins", "Berries", "Sea Salt"]
 var iceCreamFlavors = [toppingNew[0], toppingNew[1], toppingNew[2], toppingNew[3], toppingNew[4]]
 
 var myIceCreamShop = iceCreamFlavors; toppingNew; sizes
-
-
-
