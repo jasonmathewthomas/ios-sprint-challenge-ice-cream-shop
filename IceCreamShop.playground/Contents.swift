@@ -8,16 +8,16 @@ struct Flavor {
 let newFlavor = Flavor(name: "chocolate", rating: 4.0)
 newFlavor.name
 
-enum size: Double {
+enum Size: Double {
     case small = 3.99
     case medium = 4.90
     case large = 5.60
 }
 
 struct Cone {
-    var flavor: [Flavor]
-    var topping: [String]
-    var size: size
+    var flavor: Flavor
+    var topping: String?
+    var size: Size
     
     func eat () {
         print("Mmmm!, I love \(newFlavor.name)")
@@ -26,42 +26,44 @@ struct Cone {
 
 let chocFlavor = Flavor(name: "Chocolate", rating: 4.0)
 
-let chocolate = Cone(flavor: [chocFlavor], topping: ["sprinkles"], size: .small)
+let chocolate = Cone(flavor: chocFlavor, topping: "Sprinkles", size: .small)
 chocolate.eat()
 
 
 class IceCreamShop {
     
     var flavors: [Flavor]
-    var toppings: [String]
-    var size: [size]
-    var totalSales = 0.0
+    var toppings: [String?]
+    var size: [Size]
+    var totalSales: Double
     
     
-    init(flavor: [Flavor], toppings: [String], size: [size]) {
+    init(flavor: [Flavor], toppings: [String?], size: [Size], totalSales: Double) {
         self.flavors = flavor
         self.toppings = toppings
         self.size = size
+        self.totalSales = totalSales
     }
     
-    func orderCone(flavor: Flavor, topping: String, size: size) -> Cone? {
-        let cone = Cone(flavor: [flavor], topping: [topping], size: size)
+    func orderCone(flavor: Flavor, topping: String?, size: Size) -> Cone? {
+        let cone = Cone(flavor: flavor, topping: topping, size: size)
         totalSales += cone.size.rawValue
-        print(totalSales)
         return cone
     }
     
     func listTopFlavors() {
     
-    for Flavor in flavors {
-        if Flavor.rating >= 4.0 {
-            print("These are our top flavors")
+    for flavor in flavors {
+        if flavor.rating >= 4.0 {
+            print("These are our top flavors \(flavor.name)")
             }
         }
+
+   // let cone2 = orderCone(flavor: Flavor, topping: toppingNew, size: sizes)
     }
 }
 
-let sizes = [size].self
+let sizes = [Size].self
 
 let toppingNew = ["Nuts", "Choco Chips", "Raisins", "Berries", "Sea Salt"]
 
